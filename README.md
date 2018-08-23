@@ -3,6 +3,7 @@
 <img align="right" src="docs/images/windsor-logo.png">
 
 Castle Windsor is a best of breed, mature Inversion of Control container available for .NET.
+Castle Windsor 是.Net下最好的IoC容器。
 
 See the [documentation](docs/README.md).
 
