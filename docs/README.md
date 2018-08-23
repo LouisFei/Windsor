@@ -4,6 +4,8 @@
 
 Castle Windsor is best of breed, mature [Inversion of Control container](ioc.md) available for .NET.
 
+Castle Windsor是.Net下最成熟的IoC容器。
+
 * See [the release notes](https://github.com/castleproject/Windsor/releases/tag/v3.3)
 * [Download it](https://github.com/castleproject/Windsor/releases/tag/v3.3)
 * Get official builds from [NuGet](http://nuget.org/packages/Castle.Windsor): `PM> Install-Package Castle.Windsor`
@@ -57,11 +59,14 @@ Learn Windsor by example by completing step-by-step tutorials. See Windsor in ac
 * [What's new in Windsor 3.2](whats-new-3.2.md)
 * [What's new in Windsor 3.1](whats-new-3.1.md)
 
-### Concepts
+### Concepts 概念
 
 * [Inversion of Control and Inversion of Control Container](ioc.md)
+* [控制反转和控制反转容器](ioc.md)
 * [Services, Components and Dependencies](services-and-components.md)
+* [服务，组件和依赖](services-and-components.md)
 * [How components are created](how-components-are-created.md)
+* [如何创建组件](how-components-are-created.md)
 * [How dependencies are resolved](how-dependencies-are-resolved.md)
 
 ### Using the Container

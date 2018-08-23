@@ -1,4 +1,4 @@
-# Inversion of Control
+# Inversion of Control 控制反转
 
 Inversion of Control is a principle used by frameworks as a way to allow developers to extend the framework or create applications using it. The basic idea is that the framework is aware of the programmer's objects and makes invocations on them.
 
@@ -6,7 +6,9 @@ This is the opposite of using an API, where the developer's code makes the invoc
 
 You have probably been in situations where you have developed under the light of this principle, even though you were not aware of it.
 
-## Inversion of Control Container
+> 过去我调用框架，现在框架调用。（控制反转了:)）
+
+## Inversion of Control Container 控制反转容器
 
 An Inversion of Control Container uses the principle stated above to (in a nutshell) manage classes. That is, their creation, destruction, lifetime, configuration, and dependencies. This way classes do not need to obtain and configure the classes they depend on. This dramatically reduces coupling in a system and, as a consequence, simplifies reuse and testability.
 

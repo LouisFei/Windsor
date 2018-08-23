@@ -14,9 +14,13 @@ That also implies one more very important aspects of dealing with the container 
 
 Let's now have a look at what the three calls are.
 
-### Call one - bootstrapper
+现在让我们看看这三个调用是什么。
+
+### Call one - bootstrapper　启动
 
 Bootstrapper is the place where you create and configure your container. It usually is just a single method that looks somewhat like this:
+
+创建并且配置容器。
 
 ```csharp
 public IWindsorContainer BootstrapContainer()
@@ -38,7 +42,7 @@ In bootstrapper you do the following things:
 
 :information_source: **Prefer calling `Install` just once:** It is recommended to install all your installers in a single call to `Install`. While currently the container will work correctly even if call `Install` multiple times, or configure components outside of this method, Windsor is optimised for this scenario, and it performs better if you do it like this. In future versions it will be additionally optimised for usage of single `Install`.
 
-### Call two - `Resolve`
+### Call two - `Resolve`  解析
 
 In the first step we fully configure the container, and now we can actually use it. The important part is we use it just once (remember the *inversion of control* part). Every application has a root component. In a MonoRail or ASP.NET MVC application this would be your controller, WPF or WinForms application your main window, in WCF service your service, etc. You may have more than one root component, like in a console application where you'd have two - one for parsing command line parameters and second to perform some actual work, how ever there will always be very few of them and they will be the root of your component graph.
 
@@ -52,15 +56,19 @@ shell.Display();
 
 :information_source: **Resolving by type vs resolving by name:** The `Resolve` method has several overloads that can be split into two groups - with name and without name. If name is not provided Windsor will use type to locate the service (as in the example above). If name is provided the name will be used and type will be used as a convenience for you (so that you don't have to cast from `object` or as a hint to the container, when you're resolving open generic component, how Windsor should close the open generic type). **Unless you have a good reason to resolve by name, use type.**
 
+根据类型解析 vs 根据名称解析。尽量使用根据类型解析。
+
 By the time the second line of the code above finishes executing you will have a fully configured instance of your `IShell` service that you can then pass control to in the following line. If you're new to container's that should be the part that is really impressive. The container created entire complicated (containing potentially hundreds of objects, each configured differently) graph of objects for you, in a single line of code. This is profound, trust me.
 
 :information_source: **What about components I can't/don't want to obtain at root resolution time/place?** For cases where you need to pull some components from the container at some later point in time, not when resolving root component(s) use [typed factories](typed-factory-facility.md).
 
 :information_source: **What about components I want to instantiate at root resolution time/place but I don't really want to do anything with them, like background tasks?** For cases where you have components that are not dependencies of your root, but need to start as the application starts (like background tasks) use [Startable Facility](startable-facility.md).
 
-### Call three - `Dispose`
+### Call three - `Dispose` 销毁／释放
 
 That's the part that many people (especially those insisting that container does "dependency injection") forget about. Container manages entire lifetime of the components, and before we shutdown our application we need to shutdown the container, which will in turn decommission all the components it manages (for example Dispose them). That's why it is really important to call `container.Dispose()` before you close your application.
+
+关闭应用前销毁容器。
 
 ## Additional Resources
 

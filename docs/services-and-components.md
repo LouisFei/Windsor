@@ -1,12 +1,16 @@
-# Services and Components
+# Services and Components　服务和组件
 
 Components, services and dependencies:
+
+组件，服务和依赖：
 
 ![](images/component.png)
 
 As every technology, Windsor has certain basic concepts that you need to understand in order to be able to properly use it. Fear not - they may have scary and complicated names and abstract definitions but they are quite simple to grasp.
 
-## Service
+Windsor的一切基本概念。
+
+## Service　服务
 
 :information_source: **Service in Windsor and WCF service:** The term service is extremely overloaded and has become even more so in recent years. Services as used in this documentation are a broader term than for example WCF services.
 
@@ -35,7 +39,7 @@ If coffee is not your thing, you can find examples of good contracts in many are
 
 If that's all clear and simple now, let's move to the next important concept.
 
-## Component
+## Component　组件
 
 Component is related to service. Service is an abstract term and we're dealing with concrete, real world. A coffee shop as a concept won't make your coffee. For that you need an actual coffee shop that puts that concept in action. In C# terms this usually means a class implementing the service will be involved.
 
@@ -57,7 +61,7 @@ It doesn't end there (still)! Who said that your local French coffee shop can on
 
 One more thing before we move forward. While not implicitly stated so far it's probably obvious to you by now that a component provides a service (or a few). As such all the classes in your application that do not really provide any services will not end up as components in your container. Domain model classes, DTOs are just a few examples of things you will not put in a container.
 
-## Dependency
+## Dependency　依赖
 
 We're almost there. To get the full picture we need to talk about dependencies first.
 
@@ -69,7 +73,7 @@ In addition to depending on other component's services your components will also
 
 In C# terms your component will declare what dependencies it requires usually via constructor arguments or settable properties. In some more advanced scenarios dependencies of a component may have nothing to do with the class you used as implementation (remember, the concept of a component is not the same as a class that might be used as its implementation), for example when you're applying interceptors. This is advanced stuff however so you don't have to concern yourself with it if you're just starting out.
 
-## Putting it all together
+## Putting it all together 综合使用它们
 
 So now lets put it all together. To effectively use a container we're dealing with small components, exposing small, well defined, abstract services, depending on services provided by other components, and on some configuration values to fulfil contracts of their services.
 

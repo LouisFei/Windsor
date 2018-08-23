@@ -32,3 +32,10 @@ tools/**/build/
 # Docs artifacts
 docs/obj/
 docs/bin/
+/src/Castle.Windsor.Samples/CastleWindsorExample/ClassLibrary1/bin/Debug
+/src/Castle.Windsor.Samples/CastleWindsorExample/ClassLibrary1/obj/Debug
+/src/Castle.Windsor.Samples/CastleWindsorExample/WindowsFormsApp1/bin/Debug
+/src/Castle.Windsor.Samples/CastleWindsorExample/WindowsFormsApp1/obj/Debug
+/src/Castle.Windsor.Samples/HelloWorld/obj/Debug
+/src/Castle.Windsor.Samples/HelloWorld/bin/Debug
+/src/Castle.Windsor.Samples/RRR/obj/Debug
